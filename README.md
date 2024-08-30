@@ -166,7 +166,7 @@ npm start
 
 
 
-バッシュ
+```bash
 
 
 
