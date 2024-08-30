@@ -1,0 +1,7 @@
+Flask==2.0.1
+google-cloud-dialogflow==2.13.0
+google-cloud-translate==3.4.0
+google-auth==1.35.0
+google-auth-oauthlib==0.4.6
+google-auth-httplib2==0.1.0
+google-api-python-client==2.23.0
