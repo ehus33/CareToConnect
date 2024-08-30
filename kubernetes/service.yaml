@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: careconnect-backend-service
+spec:
+  selector:
+    app: careconnect-backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer

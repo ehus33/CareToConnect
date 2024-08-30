@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: careconnect-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: careconnect-backend
+  template:
+    metadata:
+      labels:
+        app: careconnect-backend
+    spec:
+      containers:
+      - name: backend
+        image: gcr.io/your-project-id/careconnect-backend:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: /secrets/credentials.json
+        volumeMounts:
+        - name: credentials
+          mountPath: /secrets
+          readOnly: true
+      volumes:
+      - name: credentials
+        secret:
+          secretName: google-credentials
